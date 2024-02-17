@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+ 
+<suite name="Suite">	
+  <test name="Shop Test Cases - Serial">
+ <!--  
+<suite name="Parallel Test Suite" parallel="classes" thread-count="4">
+  <test name="Shop Test Cases - Parallel" >
+  -->
+  <parameter name="browsername" value="Chrome"/>
+  	<classes>
+ 	  	<class name="tests.TestCase01"/> 
+   		<class name="tests.TestCase02"/> 
+    	<class name="tests.TestCase03"/>  
+    	<class name="tests.TestCase04"/> 
+    	<class name="tests.TestCase05"/> 
+    	<class name="tests.TestCase06"/> 
+    	<class name="tests.TestCase07"/>   
+  <!--  <class name="tests.TestCase08"/> -->
+ 		<class name="tests.TestCase09"/>  
+  		<class name="tests.TestCase10"/> 
+   		<class name="tests.TestCase101"/>  	<!-- Additional TestCase -->   
+ 		<class name="tests.TestCase11"/>     
+  		<class name="tests.TestCase111"/> 	<!-- Additional TestCase -->   
+ 		<class name="tests.TestCase12"/> 
+  	</classes>
+  </test>  
+</suite> 
