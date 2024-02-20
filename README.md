@@ -23,10 +23,12 @@ Note: chromedriver will be required as per current version of your browser and p
 ## Steps To Run This Code:
 
 + Import this project into the eclipse as a Import Existing Maven Project.
-+ Makde sure you have proper Java version installed/configured in your system.
++ Makde sure you have proper Java version [Java SE-17] installed/configured in your system.
 + Check the dependencies from the pom.xml and make sure all dependencies are imported properly within the project.
-+ Download and paste the proper browser driver version at the above given path.
-+ Once project is configured properly, follow the steps mentioned below to Run the code:
++ Download TestNg for eclipse by following the steps : Help > Eclipse MarketPlace > TestNG for Eclipse.
++ Download and paste the proper browser driver version at the above given path [AssignmentKargo/BrowserDriver/].
++ Once project is configured properly, refresh the whole project by right clicking on project directory.
++ Follow the steps mentioned below to Run the code:
  1)  Right Click on testng.xml
  2)  Select option Run As
  3)  Click on TestNG Suite
