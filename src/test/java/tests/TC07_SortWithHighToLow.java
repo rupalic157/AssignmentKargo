@@ -10,13 +10,13 @@ import pages.ShopPage;
 
 
 
-public class TestCase05 extends TestBasic{
-	@Test(description = "Test Case 5: Sorting Functionality - Newness ratings ")
+public class TC07_SortWithHighToLow extends TestBasic{
+	@Test(description = "Test Case 7: Sorting Functionality - High to Low ")
 	@Description("""
 			1) Open the browser
 			2) Enter the URL “http://practice.automationtesting.in/”
 			3) Click on Shop Menu
-			4) Click on Sort by Newness ratings in Default sorting dropdown
+			4) Click on Sort by High to Low Item in Default sorting dropdown
 			5) Now user can view the popular products only""")
 	public void sortBy()
 	{
@@ -26,8 +26,8 @@ public class TestCase05 extends TestBasic{
 		CommonActions.pageVerify(driver, SHOPPAGE);	// Verifying the shop page
 		
 		ShopPage page = new ShopPage(driver);
-		page.sortByOption(NEWNESS); 				// Sort Products as per Newness ratings
-
+		page.verfiySort(HTL);						// Sort & Verify Products as per High to Low 
+			
 		CommonActions.waitTime(2000);
 		CommonActions.softAssert();
 	}

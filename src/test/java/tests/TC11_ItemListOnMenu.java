@@ -9,25 +9,25 @@ import pages.HomePage;
 import pages.OrderConfirmationPage;
 import pages.ShopPage;
 
-public class TestCase10 extends TestBasic{
-	@Test(description = "Test Case 10: View Basket Functionality ")
+public class TC11_ItemListOnMenu extends TestBasic{
+	@Test(description = "Test Case 11: View Basket by Item On Top Right ")
 	@Description("""
 			1) Open the browser
 			2) Enter the URL “http://practice.automationtesting.in/”
 			3) Click on Shop Menu
 			4) Click on the Add To Basket button which adds that book to your basket
 			5) User can view that Book in the Menu item with price .
-			6) Now click on View Basket link which navigates to proceed to check out page.
+			6) Now click on Item link which navigates to proceed to check out page.
 			7) Now user can find total and subtotal values just above the Proceed to Checkout button.
 			8) The total always < subtotal because taxes are added in the subtotal
 			9) Now click on Proceed to Check out button which navigates to payment gateway page.
 			10) User can view Billing Details,Order Details,Additional details and Payment gateway details.
-			11) Now user can fill his details in billing details form and can opt any payment in the payment
-			    gateway like Direct bank transfer,cheque,cash or paypal.
+			11) Now user can fill his details in billing details form and can opt any payment in the payment gateway
+			    like Direct bank transfer,cheque,cash or paypal.
 			12) Now click on Place Order button to complete process
-			13) On clicking place order button user completes his process where the page navigates to Order 
-			    confirmation page with order details,bank details,customer details and billing details.""")
-	public void verifyAddBasketWithViewBasket()
+			13) On clicking place order button user completes his process where the page navigates to Order confirmation 
+			    page with order details,bank details,customer details and billing details""")
+	public void verifyAddBasketWithItemLink()
 	{
 		HomePage homePage = new HomePage(driver);
 		homePage.giveConsent();
@@ -36,9 +36,9 @@ public class TestCase10 extends TestBasic{
 		
 		ShopPage page = new ShopPage(driver);
 		page.addToBasket();							// Click on Add To Basket Button
-		page.viewBasket();							// Click on View Basket Button
-		
+		page.itemsList();							// Click on Item Section On Top Right of the Page
 		CommonActions.pageVerify(driver, CARTPAGE);	// Verifying the cart page
+		
 		CartPage cartPage = new CartPage(driver);		
 		cartPage.verifyTotalWithSubtotalValue();	// Verifying the sub total and total amount
 		cartPage.proceedToCheckout();				// Click On Proceed To Checkout
@@ -61,7 +61,7 @@ public class TestCase10 extends TestBasic{
 		checkoutPage.orderNote(ORDERNOTE);
 		checkoutPage.selectPayment(PAYMENTOPTION);
 		checkoutPage.clickPlaceOrder();				// Click on Place Order
-	
+		
 		OrderConfirmationPage ocp = new OrderConfirmationPage(driver);
 		ocp.verifyOrderNumber();					// Verifying the Order Number
 		ocp.verifyMessage();						// Verifying the Greeting Message

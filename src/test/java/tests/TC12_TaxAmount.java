@@ -11,7 +11,7 @@ import pages.HomePage;
 import pages.ShopPage;
 
 
-public class TestCase12 extends TestBasic{
+public class TC12_TaxAmount extends TestBasic{
 	@Test(description = "Test Case 12: Check tax value as per country requirements ")
 	@Description("""
 			1) Open the browser

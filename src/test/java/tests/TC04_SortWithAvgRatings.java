@@ -9,25 +9,24 @@ import pages.HomePage;
 import pages.ShopPage;
 
 
-public class TestCase08 extends TestBasic{
-	@Test(description = "Test Case 08: Read More Functionality ")
+public class TC04_SortWithAvgRatings extends TestBasic{
+	@Test(description = "Test Case 4: Sorting Functionality - Average ratings ")
 	@Description("""
 			1) Open the browser
 			2) Enter the URL “http://practice.automationtesting.in/”
 			3) Click on Shop Menu
-			4) Click on read more button in home page
-			5) Read More option indicates the Out Of Stock.
-			6) User cannot add the product which has read more option as it was out of stock.""")
-	public void verifyOutOfStock()
+			4) Click on Sort by Average ratings in Default sorting dropdown
+			5) Now user can view the popular products only""")
+	public void sortBy()
 	{
 		HomePage homePage = new HomePage(driver);
 		homePage.giveConsent();
 		homePage.shopPage();						// Click on shop Menu
 		CommonActions.pageVerify(driver, SHOPPAGE);	// Verifying the shop page
 		
-	//	ShopPage page = new ShopPage(driver);
-	//	page.verifyOutOfStockItem(); 				// No Such Element Present on the Screen, so this test is going to be failed !!
-	
+		ShopPage page = new ShopPage(driver);
+		page.sortByOption(AVERAGE);  				// Sort Products as per Average Ratings 
+		
 		CommonActions.waitTime(2000);
 		CommonActions.softAssert();
 	}

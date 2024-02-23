@@ -9,13 +9,14 @@ import pages.HomePage;
 import pages.ShopPage;
 
 
-public class TestCase04 extends TestBasic{
-	@Test(description = "Test Case 4: Sorting Functionality - Average ratings ")
+
+public class TC06_SortWithLowToHigh extends TestBasic{
+	@Test(description = "Test Case 6: Sorting Functionality - Low to High ")
 	@Description("""
 			1) Open the browser
 			2) Enter the URL “http://practice.automationtesting.in/”
 			3) Click on Shop Menu
-			4) Click on Sort by Average ratings in Default sorting dropdown
+			4) Click on Sort by Low to High Item in Default sorting dropdown
 			5) Now user can view the popular products only""")
 	public void sortBy()
 	{
@@ -24,9 +25,9 @@ public class TestCase04 extends TestBasic{
 		homePage.shopPage();						// Click on shop Menu
 		CommonActions.pageVerify(driver, SHOPPAGE);	// Verifying the shop page
 		
-		ShopPage page = new ShopPage(driver);
-		page.sortByOption(AVERAGE);  				// Sort Products as per Average Ratings 
-		
+		ShopPage page = new ShopPage(driver);		
+		page.verfiySort(LTH);						// Sort & Verify Products as per Low to High 
+
 		CommonActions.waitTime(2000);
 		CommonActions.softAssert();
 	}

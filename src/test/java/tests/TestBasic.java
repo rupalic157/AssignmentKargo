@@ -15,7 +15,7 @@ import generic.CommonActions;
 import generic.LoadProperties;
 
 public class TestBasic implements AutoConstants{
-public static WebDriver driver;
+public WebDriver driver;
 
 	@Parameters("browsername")
 	@BeforeMethod(alwaysRun=true)
